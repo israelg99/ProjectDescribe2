@@ -12,6 +12,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Surface;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -192,6 +194,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        hideTitleBar();
+
         super.onCreate(savedInstanceState);
 
         Log.d(TAG, "onCreate()");
@@ -202,6 +206,14 @@ public class MainActivity extends AppCompatActivity {
 
         setup();
 
+    }
+
+    private void hideTitleBar() {
+        //Remove title bar
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        //Remove notification bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
     private void applyCameraPermissionDialog() {
