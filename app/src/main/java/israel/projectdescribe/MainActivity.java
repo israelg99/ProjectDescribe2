@@ -112,6 +112,16 @@ public class MainActivity extends AppCompatActivity {
 
         params.setPictureSize(size.width, size.height);
 
+        // Check if continuous focus mode for picture is supported
+        if (params.getSupportedFocusModes().contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
+            Log.d(TAG, "setCamera() - FOCUS_MODE_CONTINUOUS_PICTURE is supported!");
+
+            params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+
+        } else {
+            Log.w(TAG, "setCamera() - FOCUS_MODE_CONTINUOUS_PICTURE is not supported!");
+        }
+
         // Setup camera parameters we assigned above
         camera.setParameters(params);
 
