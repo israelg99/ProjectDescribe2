@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Project Describe 0.2a</string>
+
+    <string name="initial_caption">Show me the world!</string>camera_permission
+
+    <string name="camera_permission">Camera permission is needed</string>
+
+    <string name="dialog_allow">Allow</string>
+    <string name="dialog_deny">Deny</string>
+</resources>
