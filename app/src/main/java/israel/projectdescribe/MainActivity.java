@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         }
         int rotate = (info.orientation - degrees + 360) % 360;
 
+        Log.d(TAG, "setCamera() - Camera Orientation: " + info.orientation);
         Log.d(TAG, "setCamera() - Degrees needed to rotate: " + degrees);
         Log.d(TAG, "setCamera() - Total rotation value: " + rotate);
 
